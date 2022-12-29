@@ -109,7 +109,7 @@
 
                     $total = $price * $qty;
                     
-                    $order_date = date("Y m  d h:i:sa");
+                    $order_date = date("Y m d h:i:s");
                     
                     $status = "Ordered";
                     
@@ -132,20 +132,18 @@
                         customer_email = '$customer_email',
                         customer_address = '$customer_address'
                     ";
-
                     //execute the query
-                    $res2 = mysqli_query($conn, $sql1);
-
+                    $res2 = mysqli_query($conn, $sql2);
                     //check whether the query is executed or not
                     if($res2 == true)
                     {
                         //query executed and order saved
-                        $_SESSION['order'] = "<div class='success'>Food ordered Successfully</div>";
+                        $_SESSION['order'] = "<div class='success text-center'>Food ordered Successfully</div>";
                         header('location:'.SITEURL);
                     }
                     else
                     {
-                        $_SESSION['order'] = "<div class='error'>Failed to Order Food.</div>";
+                        $_SESSION['order'] = "<div class='error text-center'>Failed to Order Food.</div>";
                         header('location:'.SITEURL);
                     }
                 }

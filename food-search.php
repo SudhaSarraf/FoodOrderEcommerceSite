@@ -5,7 +5,7 @@
         <div class="container">
             <?php
                 //get the search keyword
-                $search = $_POST['search'];
+                $search = mysqli_real_escape_string($conn, $_POST['search']);
             ?>
             
             <h2>Foods on Your Search <a href="#" class="text-white"><?php echo $search; ?></a></h2>
